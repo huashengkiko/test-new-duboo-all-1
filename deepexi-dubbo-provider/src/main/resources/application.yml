@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: deepexi-dubbo
+  profiles:
+    active: local
+  dubbo:
+    application:
+      name: deepexi-dubbo
+    protocol:
+      name: dubbo
+      port: 20880
+    consumer:
+      check: false
+    registry:
+      check: false
+  thymeleaf:
+    cache: false
+  redis:
+    timeout: 1000
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+swagger:
+  base-package: com.deepexi.controller
+  info:
+    title: deepexi-dubbo
+server:
+  port: 8080
+logging:
+  file: 'logs/${spring.application.name}.log'
+management:
+  server:
+    port: 15600
+mybatis:
+  mapper-locations: 'classpath:mapper/*.xml'
